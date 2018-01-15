@@ -1,0 +1,7 @@
+group_vars
+host_vars
+roles
+ansible.cfg
+*.retry
+*.yml
+!docker-compose.yml

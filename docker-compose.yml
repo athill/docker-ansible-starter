@@ -1,0 +1,14 @@
+version: '2.2'
+services:
+  ansible:
+    build: .
+    volumes:
+      - .:/playbooks
+  target:
+    build: 
+      context: .
+      dockerfile: Dockerfile-target
+    ports:
+      - 22:22
+      - 80:80
+      - 443:443

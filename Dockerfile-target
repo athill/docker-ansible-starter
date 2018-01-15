@@ -1,0 +1,8 @@
+FROM rastasheep/ubuntu-sshd:16.04
+
+# create target user, change password, and add to sudoers
+RUN apt-get update && \ 
+	apt-get install -y vim sudo python && \
+	useradd -ms /bin/bash target && \
+	echo "target:target" | chpasswd && \
+	usermod -aG sudo target 
